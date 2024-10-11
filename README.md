@@ -1,2 +1,1 @@
-# Stock App
-Define variables in `.env`, see `env-example`
+Have to reload to see the removed item
