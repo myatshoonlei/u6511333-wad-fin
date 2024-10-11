@@ -12,7 +12,7 @@ export default function CustomerList() {
   useEffect(() => {
     const fetchCustomers = async () => {
       try {
-        const res = await fetch("${APIBASE}/api/customer", {
+        const res = await fetch(`${APIBASE}/api/customer`, {
           cache: "no-store",
         });
 
