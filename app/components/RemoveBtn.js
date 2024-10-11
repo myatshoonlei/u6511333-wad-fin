@@ -5,6 +5,7 @@ import { useRouter } from "next/navigation";
 
 export default function RemoveBtn({ id }) {
   const router = useRouter();
+  const APIBASE = process.env.NEXT_PUBLIC_API_URL;
 
   const removeCustomer = async () => {
     const confirmed = confirm("Are you sure you want to delete this customer?");
@@ -12,7 +13,7 @@ export default function RemoveBtn({ id }) {
     if (confirmed) {
       try {
         // Send the DELETE request to the correct API endpoint
-        const res = await fetch(`http://localhost:3000/api/customer/${id}`, {
+        const res = await fetch(`${APIBASE}/api/customer/${id}`, {
           method: "DELETE", // Use DELETE method
         });
 

@@ -7,11 +7,12 @@ import { useEffect, useState } from "react";
 export default function CustomerList() {
   const [customers, setCustomers] = useState([]);
   const [loading, setLoading] = useState(true);
+  const APIBASE = process.env.NEXT_PUBLIC_API_URL;
 
   useEffect(() => {
     const fetchCustomers = async () => {
       try {
-        const res = await fetch("http://localhost:3000/api/customer", {
+        const res = await fetch("${APIBASE}/api/customer", {
           cache: "no-store",
         });
 

@@ -10,6 +10,7 @@ export default function EditCustomerForm({ id, name, membernumber, dateofbirth, 
   const [newInterests, setNewInterests] = useState(interests || "");
 
   const router = useRouter();
+  const APIBASE = process.env.NEXT_PUBLIC_API_URL;
 
   // Ensure state updates if the props change (for async data)
   useEffect(() => {
@@ -23,7 +24,7 @@ export default function EditCustomerForm({ id, name, membernumber, dateofbirth, 
     e.preventDefault();
 
     try {
-      const res = await fetch(`http://localhost:3000/api/customer/${id}`, {
+      const res = await fetch(`${APIBASE}/api/customer/${id}`, {
         method: "PUT",
         headers: {
           "Content-Type": "application/json",
